@@ -1,0 +1,7 @@
+.bash_history
+.bash_logout
+.cache/*
+.lesshst
+.local/*
+.viminfo
+.wget-hsts
