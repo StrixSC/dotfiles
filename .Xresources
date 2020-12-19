@@ -1,3 +1,5 @@
-xterm*fs:40
 xterm*background: black
 xterm*foreground: white
+xterm*faceName: Monospace
+xterm*faceSize: 18
+
