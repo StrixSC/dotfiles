@@ -2,4 +2,5 @@ xterm*background: black
 xterm*foreground: white
 xterm*faceName: Monospace
 xterm*faceSize: 18
+Xcursor.size: 1 
 

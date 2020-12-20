@@ -2,12 +2,12 @@
 !.arch-install
 !.bash_profile
 !.bashrc
+!.config/kitty/kitty.conf
 !.config/
 !.config/i3/config
 !.config/i3status/config
 !.config/fish/fish_variables
 !.config/neofetch/config.conf
-!.Xauthority
 !.Xdefaults
 !.Xresources
 !.xserverrc

@@ -5,7 +5,9 @@ sudo pacman -S NetworkManager wpa_supplicant --noconfirm
 sudo pacman -S pulseaudio pamixer --noconfirm
 sudo systemctl enable NetworkManager && sudo systtemctl start NetworkManager
 
-#Stuff for the R8XXau package
+# Stuff for Kitty (Terminal)
+sudo pacman -s --noconfirm kitty
+# Stuff for the R8XXau package
 sudo pacman -S dkms --noconfirm
 sudo make dkms_install
 modprobe r
