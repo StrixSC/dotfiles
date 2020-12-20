@@ -7,6 +7,8 @@
 !.config/kitty/
 !.config/kitty/kitty.conf
 !.config/i3status/config
+!.config/picom/
+!.config/picom/picom.conf
 !.config/fish
 !.config/fish/config.fish
 !.config/fish/fish_variables
