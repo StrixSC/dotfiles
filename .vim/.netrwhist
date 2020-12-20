@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/strix/.git'
+let g:netrw_dirhist_6='/home/strix/.config/i3'
+let g:netrw_dirhist_5='/usr/local/sbin'
+let g:netrw_dirhist_4='/home/strix/.config'
 let g:netrw_dirhist_3='/home/strix/.config/kitty'
 let g:netrw_dirhist_2='/home/strix/Documents'
 let g:netrw_dirhist_1='/etc/NetworkManager/conf.d'

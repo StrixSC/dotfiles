@@ -1,9 +1,14 @@
 # List of commands I used for installation
 
-sudo pacman -S --noconfirm git python python2 xorg xorg-init ttf-dejavu i3-gaps i3status vim xorg-fonts xdotools wget --noconfirm
+sudo pacman -S --noconfirm git python python2 xorg xorg-init ttf-dejavu i3-gaps i3status vim xorg-fonts xdotools wget flameshot picom --noconfirm
 sudo pacman -S NetworkManager wpa_supplicant --noconfirm
 sudo pacman -S pulseaudio pamixer --noconfirm
 sudo systemctl enable NetworkManager && sudo systtemctl start NetworkManager
+
+# Config files import
+
+cd $HOME
+sudo git clone https://github.com/StrixSC/dotfiles.git #figure out a way to remove the need for passwords 
 
 # Stuff for Kitty (Terminal)
 sudo pacman -s --noconfirm kitty
@@ -12,7 +17,11 @@ sudo pacman -S dkms --noconfirm
 sudo make dkms_install
 modprobe r
 
-#General
+### General
+
+# Set fish as default shell
+export SHELL=fish
+set -U fish_user_paths /usr/local/sbin /usr/local/bin /usr/bin
 
 # Add .xinitrc to $HOME (Eventually change this to copy the config files from my github
 cp /etc/X11/xinit/xinitrc $HOME/.xinitrc
@@ -23,6 +32,9 @@ git clone https://aur.archlinux.org/yay-git.git
 
 # Brave
 yay -S brave-bin --noconfirm
+
+# Polybar
+yay -Sy polybar --noconfirm
 
 # Nerd-fonts-mononoki
 yay -S nerd-fonts-mononoki --noconfirm
