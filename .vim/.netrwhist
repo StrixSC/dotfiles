@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/strix/.config/polybar'
 let g:netrw_dirhist_7='/home/strix/.git'
 let g:netrw_dirhist_6='/home/strix/.config/i3'
 let g:netrw_dirhist_5='/usr/local/sbin'

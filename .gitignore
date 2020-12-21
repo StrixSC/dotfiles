@@ -7,6 +7,9 @@
 !.config/kitty/
 !.config/kitty/kitty.conf
 !.config/i3status/config
+!.config/polybar/
+!.config/polybar/config
+!.config/polybar/launch.sh
 !.config/picom/
 !.config/picom/picom.conf
 !.config/fish

@@ -33,6 +33,9 @@ git clone https://aur.archlinux.org/yay-git.git
 # Brave
 yay -S brave-bin --noconfirm
 
+# Oracle VirtualBox
+# sudo pacman -S --noconfirm virtualbox-host-modules-arch
+# sudo modprobe vboxdrv
 # Polybar
 yay -Sy polybar --noconfirm
 
@@ -40,7 +43,7 @@ yay -Sy polybar --noconfirm
 yay -S nerd-fonts-mononoki --noconfirm
 
 # Cool wallpapers
-sudo pacman -S nitrogen --noconfirm
+sudo pacman -S feh --noconfirm
 cd $HOME
 mkdir -p Images/wallpapers
 cd Images/wallpapers
