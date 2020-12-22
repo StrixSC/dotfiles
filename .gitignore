@@ -1,4 +1,6 @@
 *
+!Scripts/
+!Scripts/**
 !.arch-install
 !.bash_profile
 !.bashrc
@@ -16,11 +18,14 @@
 !.config/fish/config.fish
 !.config/fish/fish_variables
 !.config/neofetch/config.conf
+!.vimrc
+!.vim/
+!.vimrc
+!.config/nvim/
+!.config/nvim/sysinit.vim
+!.config/nvim/init.vim
 !.Xresources
 !.xserverrc
 !.xinitrc
 !.screenlayout/
 !.screenlayout/default.sh
-!.wakeup
-!nf
-!.config/neofetch.jpg

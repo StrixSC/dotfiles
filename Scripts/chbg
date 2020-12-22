@@ -1,0 +1,3 @@
+#!/bin/bash
+# TODO: Add appending 0s to beginning of the arg, so that I don't have to use 0001 for example 
+feh --no-fehbg --bg-scale "$HOME/Images/Wallpapers/$1.jpg"
