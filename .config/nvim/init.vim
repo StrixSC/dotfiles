@@ -22,12 +22,13 @@ set noshowmode
 set cmdheight=2
 
 call plug#begin()
+Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline'
+Plug 'neoclide/coc.nvim'
 Plug 'scrooloose/nerdtree'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-airline/vim-airline'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'morhetz/gruvbox'
+Plug 'junegunn/fzf'
 Plug 'dylnmc/novum.vim'
 call plug#end()
 

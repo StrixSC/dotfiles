@@ -18,6 +18,8 @@
 !.config/fish/config.fish
 !.config/fish/fish_variables
 !.config/neofetch/config.conf
+!.config/tmux/
+!.config/tmux/.tmux.conf
 !.vimrc
 !.vim/
 !.vimrc

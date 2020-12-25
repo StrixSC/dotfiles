@@ -1,3 +1,5 @@
 [user]
 	name = StrixSC
 	email = talon.strix@gmail.com
+[credential "https://github.com"]
+	helper = !gh auth git-credential
