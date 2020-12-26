@@ -10,8 +10,6 @@ sudo systemctl enable NetworkManager && sudo systtemctl start NetworkManager
 cd $HOME
 sudo git clone https://github.com/StrixSC/dotfiles.git #figure out a way to remove the need for passwords 
 
-# Stuff for Kitty (Terminal)
-sudo pacman -s --noconfirm kitty
 # Stuff for the R8XXau package
 sudo pacman -S dkms --noconfirm
 sudo make dkms_install
@@ -19,9 +17,25 @@ modprobe r
 
 ### General
 
+# clone default configs
+git clone https://github.com/StrixSC/dotfiles.git
+mv dotfiles/* .
+rmdir dotfiles/
+
 # Set fish as default shell
 export SHELL=fish
+
+# PATH for fish
 set -U fish_user_paths /usr/local/sbin /usr/local/bin /usr/bin
+
+# Tmux
+sudo pacman -S --noconfirm tmux
+
+## Tmux plugin manager (TPM)
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Stuff for Kitty (Terminal)
+sudo pacman -S --noconfirm kitty
 
 # Add .xinitrc to $HOME (Eventually change this to copy the config files from my github
 cp /etc/X11/xinit/xinitrc $HOME/.xinitrc
@@ -36,13 +50,14 @@ yay -S brave-bin --noconfirm
 # Oracle VirtualBox
 # sudo pacman -S --noconfirm virtualbox-host-modules-arch
 # sudo modprobe vboxdrv
+
 # Polybar
 yay -Sy polybar --noconfirm
 
 # Nerd-fonts-mononoki
 yay -S nerd-fonts-mononoki --noconfirm
 
-# Cool wallpapers
+# Cool wallpapers (TODO: Add my own repo)
 sudo pacman -S feh --noconfirm
 cd $HOME
 mkdir -p Images/wallpapers

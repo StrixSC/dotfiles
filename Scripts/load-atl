@@ -1,6 +1,4 @@
 #!/bin/bash
-# Not the best thing to do, because the USB drive (Atlantic) needs to be on the same usb port lol - Might need to edit to figure it out.
-echo "Printing mounted disks"
 sudo fdisk -l
 
 echo "Mounting Atlantic"
