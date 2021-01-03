@@ -18,19 +18,22 @@ set undofile
 set incsearch
 set scrolloff=8
 set noshowmode
-
+set relativenumber
 set cmdheight=2
 
 call plug#begin()
-Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline'
-Plug 'neoclide/coc.nvim'
 Plug 'scrooloose/nerdtree'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf'
 Plug 'dylnmc/novum.vim'
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
-autocmd vimenter * ++nested colorscheme novum
+colorscheme codedark
+
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
+autocmd vimenter * highlight LineNr ctermfg=NONE ctermbg=NONE
 
