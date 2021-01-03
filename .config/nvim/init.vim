@@ -37,3 +37,7 @@ autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
 autocmd vimenter * highlight LineNr ctermfg=NONE ctermbg=NONE
 
+map <silent> <C-n> :NERDTreeToggle<CR>
+
+let NERDTreeShowHidden=1
+
