@@ -1,9 +1,15 @@
 # List of commands I used for installation
-
-sudo pacman -S --noconfirm git python python2 xorg xorg-init ttf-dejavu i3-gaps i3status vim xorg-fonts xdotools wget flameshot picom --noconfirm
+sudo pacman -S --noconfirm git python python2 xorg xorg-init ttf-dejavu i3-gaps i3status vim xorg-fonts xdotools wget flameshot picom nvidia nvidia-settings
 sudo pacman -S NetworkManager wpa_supplicant --noconfirm
 sudo pacman -S pulseaudio pamixer --noconfirm
 sudo systemctl enable NetworkManager && sudo systtemctl start NetworkManager
+
+# Cronie (For Crontab)
+sudo pacman -S --noconfirm cronie
+sudo systemctl enable --now cronie.service
+
+# Nvidia drivers
+sudo pacman -S --noconfirm nvidia nvidia-settings 
 
 # Config files import
 
@@ -28,10 +34,16 @@ export SHELL=fish
 # PATH for fish
 set -U fish_user_paths /usr/local/sbin /usr/local/bin /usr/bin
 
+# Oh My Fish
+curl -Lk https://get.oh-my.fish | fish
+
+# Starship prompt
+curl -fsSL https://starship.rs/install.sh | bash
+
 # Tmux
 sudo pacman -S --noconfirm tmux
 
-## Tmux plugin manager (TPM)
+# Tmux plugin manager (TPM)
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Stuff for Kitty (Terminal)
