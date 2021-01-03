@@ -24,6 +24,7 @@
 !.config/fish/config.fish
 !.config/fish/fish_variables
 !.config/neofetch/config.conf
+!.config/starship.toml
 !.tmux.conf
 !.vimrc
 !.vim/
