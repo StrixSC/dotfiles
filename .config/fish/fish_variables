@@ -4,8 +4,12 @@ SETUVAR --export EDITOR:nvim
 SETUVAR --export --path PATH:/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl\x1e/home/strix/Scripts/
 SETUVAR TESSDATA_PREFIX:/usr/share/tessdata
 SETUVAR --export VISUAL:nvim
-SETUVAR XDG_CONFIG_HOME:/home/strix/.config/
+SETUVAR XDG_CONFIG_HOME:/home/strix/\x2econfig/
 SETUVAR __fish_initialized:3100
+SETUVAR dangerous_nocmdhist:c\x1ed\x1ell\x1els\x1em\x1es
+SETUVAR dangerous_pwdstyle:short\x1elong\x1enone
+SETUVAR dangerous_sessions_active:\x1d
+SETUVAR dangerous_sessions_active_pid:\x1d
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
@@ -30,7 +34,7 @@ SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_greeting:\x1d
-SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_key_bindings:fish_vi_key_bindings
 SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
