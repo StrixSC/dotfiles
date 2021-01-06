@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # List of commands I used for installation
 sudo pacman -S --noconfirm git python python2 xorg xorg-init ttf-dejavu noto-fonts-emoji i3-gaps i3status vim xorg-fonts xdotools wget flameshot picom nvidia nvidia-settings
 sudo pacman -S NetworkManager wpa_supplicant --noconfirm
