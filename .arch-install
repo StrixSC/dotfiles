@@ -12,14 +12,15 @@ sudo systemctl enable --now cronie.service
 sudo pacman -S --noconfirm nvidia nvidia-settings 
 
 # Config files import
-
 cd $HOME
 sudo git clone https://github.com/StrixSC/dotfiles.git #figure out a way to remove the need for passwords 
 
 # Stuff for the R8XXau package
 sudo pacman -S dkms --noconfirm
-sudo make dkms_install
-modprobe r
+git clone https://github.com/aircrack-ng/rtl8812au.git R8XXau-Driver
+cd R8XXau-Driver/
+sudo make dkms_remove && sudo make dkms_install
+sudo modprobe 88XXau
 
 ### General
 
@@ -53,8 +54,7 @@ sudo pacman -S --noconfirm kitty
 cp /etc/X11/xinit/xinitrc $HOME/.xinitrc
 
 # Installing yay
-sudo pacman -S go --noconfirm
-git clone https://aur.archlinux.org/yay-git.git
+sudo pacman -S go --noconfirm git clone https://aur.archlinux.org/yay-git.git
 
 # Brave
 yay -S brave-bin --noconfirm
