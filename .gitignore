@@ -33,4 +33,5 @@
 !.xserverrc
 !.xinitrc
 !.screenlayout/
+!.screenlayout/work-layout.sh
 !.screenlayout/default.sh
