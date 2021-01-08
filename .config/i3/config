@@ -20,12 +20,13 @@ set $c_third_l  #3a3a3add
 set $c_fourth   #c91808dd
 set $c_fourth_l #e52312dd
 set $c_fifth    #0ba4c6dd
+set $c_active   #ffffffff
 set $c_fifth_l  #0fb4d8dd
 set $c_border   #111111dd
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -129,18 +130,28 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 
-set $ws1 ""
-set $ws2 ""
-set $ws3 ""
-set $ws4 ""
-set $ws5 ""
-set $ws6 "ﴣ"
-set $ws7 ""
-set $ws8 ""
-set $ws9 ""
-set $ws10 "聾"
+# set $ws1 "1:"
+# set $ws2 "2:"
+# set $ws3 "3:"
+# set $ws4 "4:"
+# set $ws5 "5:"
+# set $ws6 "6:ﴣ"
+# set $ws7 "7:"
+# set $ws8 "8:"
+# set $ws9 "9:"
+# set $ws10 "10:聾"
 
-# switch to workspace
+set $ws1 "1:tty"
+set $ws2 "2:dev"
+set $ws3 "3:www"
+set $ws4 "4:git"
+set $ws5 "5:docs"
+set $ws6 "6:burp"
+set $ws7 "7:vbox"
+set $ws8 "8:htb"
+set $ws9 "9:mail"
+set $ws10 "10:keepass"
+
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -259,19 +270,17 @@ mode "$mode_gaps_outer" {
 bindsym Print       exec flameshot full
 bindsym Ctrl+Print exec flameshot gui
 
-bar {
-    # load the status bar config
+bar { # load the status bar config
     status_command i3status
-
     # make the status bar support transparency (only in i3-gaps)
-    i3bar_command i3bar -t
+    #i3bar_command i3bar -t
 
     # define bar behavior in hidden state
     hidden_state hide
     modifier $mod
 
     # place the bar on the top
-    position bottom
+    position top
 
     # choose colors for the bar
     # RGBA in i3-gaps
@@ -281,7 +290,7 @@ bar {
         separator  $c_first
 
         # class             # border    # backg   # text
-        focused_workspace   $c_fifth_l  $c_fifth  $c_first
+        focused_workspace   $c_fifth_l  $c_fifth  $c_second
         inactive_workspace  $c_third_l  $c_third  $c_second
         urgent_workspace    $c_fourth_l $c_fourth $c_first
         binding_mode        $c_third_l  $c_third  $c_second
@@ -291,13 +300,13 @@ bar {
     tray_output none
 
     # use a different font for the bar
-    font pango:San Francisco Display Medium 9
-
-    # use a custom separator symbol
-    separator_symbol " | "
+    font pango: FuraMono Nerd Font 12
 
     # choose if you want workspace buttons
     workspace_buttons yes
+
+    # remove workspaces numbers
+    strip_workspace_numbers yes
 
     # show the binding mode indicator
     binding_mode_indicator yes
