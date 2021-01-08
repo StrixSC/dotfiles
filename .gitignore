@@ -5,6 +5,8 @@
 !.bash_profile
 !.bashrc
 !.config/
+!.config/rofi/
+!.config/rofi/config.rasi
 !.config/i3/
 !.config/i3/config
 !.config/nvim/
