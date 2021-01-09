@@ -26,7 +26,7 @@ set $c_border   #111111dd
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 12
+font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -272,37 +272,23 @@ mode "$mode_gaps_outer" {
 bindsym Print       exec flameshot full
 bindsym Ctrl+Print exec flameshot gui
 
-bar { # load the status bar config
-    status_command i3status
-    # make the status bar support transparency (only in i3-gaps)
-    #i3bar_command i3bar -t
+bar { 
 
-    # define bar behavior in hidden state
-    hidden_state hide
-    modifier $mod
+    # load the status bar config
+    status_command i3blocks
+   
+    # make the status bar support transparency (only in i3-gaps)
+    # i3bar_command i3bar -t
 
     # place the bar on the top
     position top
 
-    # choose colors for the bar
-    # RGBA in i3-gaps
-    colors {
-        background $c_first
-        statusline $c_second
-        separator  $c_first
-
-        # class             # border    # backg   # text
-        focused_workspace   $c_fifth_l  $c_fifth  $c_second
-        inactive_workspace  $c_third_l  $c_third  $c_second
-        urgent_workspace    $c_fourth_l $c_fourth $c_first
-        binding_mode        $c_third_l  $c_third  $c_second
-    }
-
     # add a system tray to the primary monitor
-    tray_output none
+    tray_output yes
 
     # use a different font for the bar
-    font pango: FuraMono Nerd Font 12
+    font pango: FuraMono Nerd Font 10
+    # font pango: Source Code Pro for Powerline 12
 
     # choose if you want workspace buttons
     workspace_buttons yes
@@ -313,3 +299,10 @@ bar { # load the status bar config
     # show the binding mode indicator
     binding_mode_indicator yes
 }
+
+
+
+# i3blocks signals
+
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks

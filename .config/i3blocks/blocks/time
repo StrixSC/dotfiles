@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+# Setup default values
+format="${format:-%H:%M:%S} "
+
+# Update full text (first line)
+date "+$format"
