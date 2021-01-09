@@ -80,6 +80,7 @@ WARN_RX=307200
 WARN_TX=30720
 CRIT_RX=512000
 CRIT_TX=51200
+min_width=200
 
 [key_layout]
 # Requires setxkbmap
