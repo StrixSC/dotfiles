@@ -270,7 +270,8 @@ bar {
 
 bar  {
     position bottom
-    output HDMI-0 font pango: FuraMono Nerd Font 10
+    output HDMI-0
+    font pango: FuraMono Nerd Font 10
     strip_workspace_numbers yes
     binding_mode_indicator yes
     tray_output no
