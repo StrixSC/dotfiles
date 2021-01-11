@@ -58,10 +58,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -241,31 +241,31 @@ mode "$mode_gaps_outer" {
 }
 
 
-bar { 
+#bar { 
 
-    # load the status bar config
-    # status_command i3blocks
-    output DP-0
+    ## load the status bar config
+    ## status_command i3blocks
+    #output DP-0
    
-    # make the status bar support transparency (only in i3-gaps)
-    # i3bar_command i3bar --transparency
+    ## make the status bar support transparency (only in i3-gaps)
+    ## i3bar_command i3bar --transparency
 
-    # place the bar on the top
-    position top
+    ## place the bar on the top
+    #position top
 
-    # use a different font for the bar
-    font pango: FuraMono Nerd Font 10
-    # font pango: Source Code Pro for Powerline 12
+    ## use a different font for the bar
+    #font pango: FuraMono Nerd Font 10
+    ## font pango: Source Code Pro for Powerline 12
 
-    # choose if you want workspace buttons
-    workspace_buttons false
+    ## choose if you want workspace buttons
+    #workspace_buttons false
 
-    # remove workspaces numbers
-    strip_workspace_numbers yes
+    ## remove workspaces numbers
+    #strip_workspace_numbers yes
 
-    # show the binding mode indicator
-    binding_mode_indicator yes
-}
+    ## show the binding mode indicator
+    #binding_mode_indicator yes
+#}
 
 
 bar  {
@@ -315,6 +315,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+# XFCE4 Panel
+exec_always --no-startup-id xfce4-panel --disable-wm-check
 
 # Compton
 exec --no-startup-id compton -b -f
