@@ -99,7 +99,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -241,31 +241,34 @@ mode "$mode_gaps_outer" {
 }
 
 
-#bar { 
+bar { 
+   # load the status bar config
+   status_command i3blocks
+   output DP-0
+  
+   # make the status bar support transparency (only in i3-gaps)
+   # i3bar_command i3bar --transparency
 
-    ## load the status bar config
-    ## status_command i3blocks
-    #output DP-0
-   
-    ## make the status bar support transparency (only in i3-gaps)
-    ## i3bar_command i3bar --transparency
+   # place the bar on the top
+   position bottom
 
-    ## place the bar on the top
-    #position top
+   # use a different font for the bar
+   font pango: FuraMono Nerd Font 10
+   # font pango: Source Code Pro for Powerline 12
 
-    ## use a different font for the bar
-    #font pango: FuraMono Nerd Font 10
-    ## font pango: Source Code Pro for Powerline 12
+   # choose if you want workspace buttons
+   workspace_buttons true
 
-    ## choose if you want workspace buttons
-    #workspace_buttons false
+   # remove workspaces numbers
+   strip_workspace_numbers yes
 
-    ## remove workspaces numbers
-    #strip_workspace_numbers yes
+   # show the binding mode indicator
+   binding_mode_indicator yes
 
-    ## show the binding mode indicator
-    #binding_mode_indicator yes
-#}
+    # Tray output
+    tray_output no 
+
+}
 
 
 bar  {
@@ -286,14 +289,14 @@ bar  {
     tray_output no
 }
 
-bar  {
-    position bottom
-    output DP-0
-    font pango: FuraMono Nerd Font 10
-    strip_workspace_numbers yes
-    binding_mode_indicator yes
-    tray_output yes
-}
+#bar  {
+    #position bottom
+    #output DP-0
+    #font pango: FuraMono Nerd Font 10
+    #strip_workspace_numbers yes
+    #binding_mode_indicator yes
+    #tray_output yes
+#}
 
 
 #############################
@@ -328,6 +331,9 @@ exec --no-startup-id compton -b -f
 #############################
 # Custom Bindings
 #############################
+
+# Toggle bar
+bindsym $mod+b bar mode toggle
 
 # Flameshot (Screenshots)
 bindsym Print       exec flameshot full
