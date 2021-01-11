@@ -244,11 +244,11 @@ mode "$mode_gaps_outer" {
 bar { 
 
     # load the status bar config
-    status_command i3blocks
+    # status_command i3blocks
     output DP-0
    
     # make the status bar support transparency (only in i3-gaps)
-    i3bar_command i3bar -t
+    # i3bar_command i3bar --transparency
 
     # place the bar on the top
     position top
