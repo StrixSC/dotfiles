@@ -2,7 +2,10 @@
 
 # List of commands I used for installation
 sudo pacman -S --noconfirm git python python2 xorg xorg-init ttf-dejavu noto-fonts-emoji i3-gaps i3status vim xorg-fonts xdotools wget flameshot picom nvidia nvidia-settings
-sudo pacman -S NetworkManager iwd --noconfirm
+
+# Add this line after having connected to the network in order to make it autoconnect: 
+# nmcli device set IFNAME autoconnect yes (in my case IFNAME = wlan0, but it could change in the future depending on the name given to the interface)
+sudo pacman -S NetworkManager wpa_supplicant wireless_tools --noconfirm
 sudo pacman -S pulseaudio pamixer --noconfirm
 sudo systemctl enable NetworkManager && sudo systtemctl start NetworkManager
 
