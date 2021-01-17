@@ -9,6 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# Variable sets
 set $mod Mod1
 set $ms Mod4
 
@@ -69,12 +70,6 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
 # split in horizontal orientation
 bindsym $mod+' split h 
 
@@ -120,9 +115,9 @@ set $ws2 "2:dev"
 set $ws3 "3:www"
 set $ws4 "4:git"
 set $ws5 "5:docs"
-set $ws6 "6:burp"
+set $ws6 "6:disc"
 set $ws7 "7:vbox"
-set $ws8 "8:htb"
+set $ws8 "8:etc"
 set $ws9 "9:mail"
 set $ws10 "10:keepass"
 
@@ -325,6 +320,9 @@ exec_always --no-startup-id xfce4-panel --disable-wm-check
 # Compton
 exec --no-startup-id compton -b -f
 
+# AltTab
+exec_always --no-startup-id alttab -w 1 -d 2 -font "xft:Bitstream Vera-10" -frame "#ccc"
+
 # Polybar
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -334,6 +332,9 @@ exec --no-startup-id compton -b -f
 
 # Toggle bar
 bindsym $mod+b bar mode toggle
+
+# Test
+# bindsym $mod+Tab [tiling workspace="__focused__"] move workspace "__reorder__"; [workspace="__reorder__"] move workspace current
 
 # Flameshot (Screenshots)
 bindsym Print       exec flameshot full
@@ -355,3 +356,16 @@ bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# Assigning workspaces to monitors
+workspace 1 output DP-0
+workspace 2 output DP-0
+workspace 3 output DVI-D-0
+workspace 4 output DP-0
+workspace 5 output HDMI-0
+workspace 6 output DVI-D-0
+workspace 10 output HDMI-0
+
+# Specific windows set floating on
+for_window [class="vlc"] floating enable
+

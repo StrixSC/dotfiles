@@ -13,8 +13,14 @@ sudo systemctl enable NetworkManager && sudo systtemctl start NetworkManager
 sudo pacman -S --noconfirm cronie
 sudo systemctl enable --now cronie.service
 
+# SSHPass
+sudo pacman -S sshpass --noconfirm
+
 # Nvidia drivers
 sudo pacman -S --noconfirm nvidia nvidia-settings 
+
+# Razer software for Tartarus V2
+yay -S --noconfirm openrazer-meta polychromatic
 
 # Config files import
 cd $HOME
@@ -64,12 +70,21 @@ sudo pacman -S go --noconfirm git clone https://aur.archlinux.org/yay-git.git
 # Brave
 yay -S brave-bin --noconfirm
 
+# Xfce4 Panel
+sudo pacman -S --noconfirm xfce4-panel
+
 # Oracle VirtualBox
 # sudo pacman -S --noconfirm virtualbox-host-modules-arch
 # sudo modprobe vboxdrv
 
 # Polybar
 yay -Sy polybar --noconfirm
+
+# Alttab-like program
+git clone https://github.com/sagb/alttab.git
+cd alttab
+./configure && sudo make install
+
 
 # Nerd-fonts-mononoki
 yay -S nerd-fonts-mononoki --noconfirm
@@ -81,8 +96,8 @@ mkdir -p Images/wallpapers
 cd Images/wallpapers
 git clone https://gitlab.com/dwt1/wallpapers.git 
 
-# NPM & NODE:
-sudo pacman -S --noconfirm nodejs npm
+# NPM & NVM:
+sudo pacman -S --noconfirm nvm npm node
 
 # Prettier:
 sudo npm i -g prettier

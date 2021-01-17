@@ -3,3 +3,6 @@
 	email = talon.strix@gmail.com
 [credential "https://github.com"]
 	helper = !gh auth git-credential
+[core]
+	longpaths = true
+	autocrlf = false
