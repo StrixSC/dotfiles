@@ -71,7 +71,7 @@ let g:rooter_manual_only = 1
 Plug 'christoomey/vim-tmux-navigator'
 "Easy switching between buffers - vim-airline will show buffer at the top
 "unless multiple tabs are open
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
