@@ -1,7 +1,23 @@
 #!/bin/bash
 
 # List of commands I used for installation
+timedatectl set-ntp true
+sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm git python python2 xorg xorg-init ttf-dejavu noto-fonts-emoji i3-gaps i3status vim xorg-fonts xdotools wget flameshot picom nvidia nvidia-settings
+
+fdisk -l
+DISK=""
+ANSWER=null
+DISK_CHOSEN=false
+while !DISK_CHOSE || !ANSWER
+if [$ANSWER = "Y"] || [$ANSWER = "y"] || [$ANSWER = "Yes"]; then
+  DISK_CHOSEN=true
+else
+  echo "Enter your disk"
+  read DISK
+  echo "Would you like to chose $DISK ? [Y/y/yes]"
+  read ANSWER
+fi
 
 # Add this line after having connected to the network in order to make it autoconnect: 
 # nmcli device set IFNAME autoconnect yes (in my case IFNAME = wlan0, but it could change in the future depending on the name given to the interface)
@@ -40,14 +56,14 @@ git clone https://github.com/StrixSC/dotfiles.git
 mv dotfiles/* .
 rmdir dotfiles/
 
-# Set fish as default shell
-export SHELL=fish
-
-# PATH for fish
-set -U fish_user_paths /usr/local/sbin /usr/local/bin /usr/bin
-
-# Oh My Fish
-curl -Lk https://get.oh-my.fish | fish
+## Set fish as default shell
+#export SHELL=fish
+#
+## PATH for fish
+#set -U fish_user_paths /usr/local/sbin /usr/local/bin /usr/bin
+#
+## Oh My Fish
+#curl -Lk https://get.oh-my.fish | fish
 
 # Starship prompt
 curl -fsSL https://starship.rs/install.sh | bash

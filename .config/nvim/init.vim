@@ -37,27 +37,6 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
-Plug 'neoclide/coc.nvim', {'branch' : 'release'}
-"use :CocDiagnostics to see list of errors
-"and :CocConfig to see config options
-"Prettier by default will run on auto save but can also be manually triggered by:
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-nmap <leader>p :Prettier<CR>
-"go to definition
-nmap <leader>gd <Plug>(coc-definition)
-"list all references
-nmap <leader>gr <Plug>(coc-references)
-nnoremap <C-p> :Files<CR>
-
-"View and search LSP symbols, tags in Vim/NeoVim.
-"https://github.com/liuchengxu/vista.vim
-" Opens a window with all the variables and functions
-Plug 'liuchengxu/vista.vim'
-"sets coc.nvim as default Vista
-let g:vista_default_executive = 'coc'
-"shortcut to toggle Vista
-nmap <leader>vv :Vista!!<CR>
-
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
 
@@ -292,7 +271,7 @@ Plug 'rainglow/vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
-colorscheme codedark
+colorscheme onedark
 
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
@@ -450,8 +429,8 @@ function TurnOnCustomSettings()
   "javaScript classes etc
   :hi JavaScriptReserved term=underline cterm=italic ctermfg=84 gui=italic 
   "make background transparent
-  :hi Normal guibg=NONE ctermbg=NONE
-  :hi clear Normal
+  ":hi Normal guibg=NONE ctermbg=NONE
+  ":hi clear Normal
 
   "overwites the non text background
   "":hi NonText guibg=NONE ctermbg=NONE
@@ -581,70 +560,5 @@ set path+=**
 " Display all matching files when we tab complete
 set wildmenu
 
-"---------------------
-" run it on vim start
-" --------------------
 autocmd VimEnter * RandomColorScheme
 
-"automatically clearn signcolumn
-autocmd VimEnter * hi clear SignColumn
-
-"overwites the non text background
-autocmd VimEnter * hi clear NonText
-autocmd VimEnter * hi clear EndOfBuffer
-autocmd VimEnter * hi clear Special
-autocmd VimEnter * hi clear LineNr
-
-"make background of any theme black
-map <Leader>mb :hi Normal guibg=black guifg=white<CR>
-"make background clear
-map <leader>mc :hi clear Normal<CR>
-
-if exists('$TMUX')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
-
-"++++++++++++++++++++++++++++
-"  custom highlights below
-"++++++++++++++++++++++++++++
-" Enable italics for themes
-let g:onedark_terminal_italics=1
-let g:gruvbox_italic=1
-let g:two_firewatch_italics=1
-let g:dracula_italic=1
-let g:dracula_bold=1
-let g:enable_bold_font = 1
-let g:one_allow_italics = 1 " I love italic for comments
-let g:enable_italic_font = 1
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-
-" Overwrite colors and font style
-"green comments
-"hi Comment guifg=#7ea869 ctermfg=green cterm=italic gui=italic
-"hi JavaScriptLineComment guifg=#7ea869 ctermfg=green cterm=italic gui=italic"Enable HTML attributes to be italic
-
-highlight htmlArg cterm=italic gui=italic
-
-"Enable HTML italic highlight
-highlight htmlItalic cterm=italic gui=italic
-
-"make background of any theme black
-"highlight Normal guibg=black guifg=white
-"hi clear Normal
-
-"overwites the non text background
-"hi NonText guibg=NONE ctermbg=NONE
-"hi EndOfBuffer guibg=NONE ctermbg=NONE
-hi clear NonText
-hi clear EndOfBuffer
-
-" clears Special keyword highlight
-" and sets it to custom light blue color
-hi clear Special
-
-"clear sign column and line background
-hi clear SignColumn
-hi clear LineNrm

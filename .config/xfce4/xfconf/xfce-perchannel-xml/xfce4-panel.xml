@@ -52,6 +52,7 @@
       <property name="hidden-legacy-items" type="array">
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="steam"/>
         <value type="string" value="vlc"/>
         <value type="string" value="discord1"/>
       </property>
@@ -71,7 +72,7 @@
     <property name="plugin-35" type="string" value="diskperf"/>
     <property name="plugin-38" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance1079;chromium.instance1320;chromium.instance2439317;chromium.instance826492;chromium.instance951963;firefox.instance2587322;firefox.instance2838196;vlc"/>
+      <property name="mpris-players" type="string" value="chromium.instance1079;chromium.instance12989;chromium.instance1320;chromium.instance1465;chromium.instance1727770;chromium.instance1776;chromium.instance216927;chromium.instance2230;chromium.instance2439317;chromium.instance2875;chromium.instance418011;chromium.instance562287;chromium.instance599259;chromium.instance681869;chromium.instance826492;chromium.instance951963;firefox.instance2587322;firefox.instance2838196;firefox.instance423641;vlc"/>
     </property>
     <property name="plugin-53" type="string" value="xkb">
       <property name="display-name" type="uint" value="1"/>
