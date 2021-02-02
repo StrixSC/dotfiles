@@ -5,19 +5,11 @@ timedatectl set-ntp true
 sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm git python python2 xorg xorg-init ttf-dejavu noto-fonts-emoji i3-gaps i3status vim xorg-fonts xdotools wget flameshot picom nvidia nvidia-settings
 
-fdisk -l
-DISK=""
-ANSWER=null
-DISK_CHOSEN=false
-while !DISK_CHOSE || !ANSWER
-if [$ANSWER = "Y"] || [$ANSWER = "y"] || [$ANSWER = "Yes"]; then
-  DISK_CHOSEN=true
-else
-  echo "Enter your disk"
-  read DISK
-  echo "Would you like to chose $DISK ? [Y/y/yes]"
-  read ANSWER
-fi
+# Some great replacement to popular utilities written in rust
+# Find replacement:
+
+sudo pacman -S --noconfirm fd bat rg 
+
 
 # Add this line after having connected to the network in order to make it autoconnect: 
 # nmcli device set IFNAME autoconnect yes (in my case IFNAME = wlan0, but it could change in the future depending on the name given to the interface)

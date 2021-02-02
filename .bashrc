@@ -4,9 +4,11 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-alias ls='ls --color=auto'
+alias ls='exa'
 PS1='[\u@\h \W]\$ '
 [ -r /home/strix/.byobu/prompt ] && . /home/strix/.byobu/prompt   #byobu-prompt#
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -15,4 +17,9 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(starship init bash)"
 complete -c man which
 bind TAB:menu-complete
+
+SHELL=/usr/bin/fish
+PATH=${PATH}:${HOME}/Scripts
+export PATH
+export SHELL
 
