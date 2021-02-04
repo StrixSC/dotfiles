@@ -354,9 +354,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # This is to fix the random pulseaudio stop working thing
 bindsym $mod+p exec --no-startup-id pulseaudio -k
 
+bindsym $mod+i exec --no-startup-id picom-trans -c -- -10
+bindsym $mod+o exec --no-startup-id picom-trans -c +10
 
 # start a terminal
-bindsym $mod+Return exec kitty 
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
