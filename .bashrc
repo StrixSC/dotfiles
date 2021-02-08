@@ -25,5 +25,8 @@ bind TAB:menu-complete
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
+
 PATH=${PATH}:${HOME}/Scripts
 export PATH
+export GOOGLE_APPLICATION_CREDENTIALS=/run/media/strix/ATLANTIC/important-documents/sparta-7350d.json
+source /home/strix/.config/broot/launcher/bash/br

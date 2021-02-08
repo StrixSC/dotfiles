@@ -33,8 +33,10 @@ let mapleader = " "
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'dikiaap/minimalist'
 Plug 'leafgarland/typescript-vim'
 Plug 'dylnmc/novum.vim'
+Plug 'dracula/vim'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -49,8 +51,6 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"let g:airline_theme='onedark'
-"let g:airline_powerline_fonts = 5
 
 ""Vim Better Whitespace Plug
 ":ToggleWhitespace
@@ -68,12 +68,6 @@ Plug 'kablamo/vim-git-log'
 " Install fonts for vim-devicons from https://github.com/ryanoasis/nerd-fonts
 Plug 'ryanoasis/vim-devicons'
 
-" Easily interact with tmux from vim
-Plug 'benmills/vimux'
-" Prompt for a command to run in another pane
-map <Leader><Leader>p  :VimuxPromptCommand<CR>
-" rerun previous command
-map <Leader><Leader>r :VimuxRunLastCommand<CR>
 "Show which line changed since your last commit.
 "GitGutterToggle
 Plug 'airblade/vim-gitgutter'
@@ -136,9 +130,7 @@ set showmatch
 "enable cursor line
 "set cursorline
 
-set background=dark
-"set background=light
-
+"set background=dark set background=light 
 "Sometimes it is helpful if your working directory
 "is always the same as the file you are editing.
 "To achieve this, put the following in your vimrc:
@@ -161,23 +153,23 @@ set incsearch
 
 "space space y will copy all the text
 map <Leader><Leader>y :%y+<CR>
-
 "pick random color scheme
 map <Leader>rc :RandomColorScheme<CR>
 nmap <C-P> :FZF<CR>
 "compiling and running c++ files
 "autocmd filetype cpp nnoremap <leader><leader>4 :w <bar> !clear && g++ -Wall -Wno-unused-result -std=c++11 -O2 % -o %:r && ./%:r <CR>
-"autocmd filetype cpp nnoremap <leader><leader>5 :w <bar> !clear && g++ -Wall -Wno-unused-result -std=c++11 -O2 % -o %:r && ./%:r < ./input.txt<CR>
+"autocmd filetype cpp nnoremap <leader<leader>5 :w <bar> !clear && g++ -Wall -Wno-unused-result -std=c++11 -O2 % -o %:r && ./%:r < ./input.txt<CR>
 "c++2a - working draft for ISO C++ 2020 standard
 "
 "-g is debug mode
 "-O0 optimization for compilation time (default)
-"-O2 optimization more for code size and execution time
+"-O2 optimization mre for code size and execution time
 autocmd filetype cpp nnoremap <leader><leader>0 :w <bar> !clear && g++ -Wall -Wno-unused-result -std=c++2a -g -O2 % -o %:r && ./%:r <CR>
 autocmd filetype cpp nnoremap <leader><leader>00 :w <bar> !clear && g++ -Wall -Wno-unused-result -std=c++2a -g -O2 % -o %:r && ./%:r < ./input.txt<CR>
 
 " CTRL-C and CTRL-Insert are Copy
 vnoremap <C-C> "+y
 
+colorscheme Drakos
 " Display all matching files when we tab complete
 set wildmenu

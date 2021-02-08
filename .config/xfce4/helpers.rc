@@ -1,4 +1,5 @@
 WebBrowser=brave
-FileManager=pcmanfm
+FileManager=thunar
 TerminalEmulator=xterm
+MailReader=custom-MailReader
 

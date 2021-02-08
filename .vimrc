@@ -702,3 +702,5 @@ hi clear Special
 "clear sign column and line background
 hi clear SignColumn
 hi clear LineNrm
+
+colorscheme Drakos

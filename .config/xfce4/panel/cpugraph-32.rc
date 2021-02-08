@@ -14,4 +14,5 @@ Foreground1=rgb(143,240,164)
 BarsColor=rgb(249,240,107)
 SmtIssuesColor=rgb(246,97,81)
 SmtIssues=1
+Background=rgb(0,0,0)
 

@@ -38,7 +38,6 @@
 !.config/picom/picom.conf
 !.config/fish
 !.config/fish/config.fish
-!.config/fish/fish_variables
 !.config/neofetch/config.conf
 !.config/starship.toml
 !.gitconfig

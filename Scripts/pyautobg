@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 import math
-import quantumrandom
-import os 
+import random
+import os
 from argparse import ArgumentParser
 
 parser = ArgumentParser()
@@ -14,8 +14,8 @@ args = parser.parse_args()
 
 try:
     wallpapers = os.listdir(args.wallpapers_dir)
-    random_wp_num = math.floor(quantumrandom.randint(0, len(wallpapers)))
-    selected_wp = args.wallpapers_dir + wallpapers[random_wp_num]
+    random.shuffle(wallpapers)
+    selected_wp = args.wallpapers_dir + wallpapers[0]
     print(selected_wp)
     os.system("DISPLAY=:0.0 /usr/bin/feh --bg-scale " + "\"" + selected_wp + "\"")
 except:
