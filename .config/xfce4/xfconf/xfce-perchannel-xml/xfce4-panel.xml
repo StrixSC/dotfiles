@@ -6,7 +6,7 @@
     <value type="int" value="1"/>
     <property name="dark-mode" type="bool" value="true"/>
     <property name="panel-1" type="empty">
-      <property name="position" type="string" value="p=6;x=1280;y=1094"/>
+      <property name="position" type="string" value="p=12;x=1315;y=2506"/>
       <property name="length" type="uint" value="62"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="icon-size" type="uint" value="20"/>
@@ -32,15 +32,15 @@
         <value type="int" value="19"/>
         <value type="int" value="6"/>
       </property>
-      <property name="span-monitors" type="bool" value="false"/>
+      <property name="span-monitors" type="bool" value="true"/>
       <property name="disable-struts" type="bool" value="false"/>
       <property name="enter-opacity" type="uint" value="100"/>
       <property name="leave-opacity" type="uint" value="100"/>
       <property name="background-style" type="uint" value="1"/>
       <property name="background-rgba" type="array">
-        <value type="double" value="0.056667"/>
-        <value type="double" value="0.054022"/>
-        <value type="double" value="0.054022"/>
+        <value type="double" value="0.000000"/>
+        <value type="double" value="0.000000"/>
+        <value type="double" value="0.000000"/>
         <value type="double" value="1.000000"/>
       </property>
     </property>
@@ -64,6 +64,9 @@
         <value type="string" value="vlc"/>
         <value type="string" value="discord1"/>
       </property>
+      <property name="hidden-items" type="array">
+      </property>
+      <property name="menu-is-primary" type="bool" value="false"/>
     </property>
     <property name="plugin-7" type="string" value="applicationsmenu">
       <property name="button-icon" type="string" value="/usr/share/pixmaps/archlinux-logo.png"/>
@@ -80,7 +83,7 @@
     <property name="plugin-35" type="string" value="diskperf"/>
     <property name="plugin-38" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance1079;chromium.instance1212598;chromium.instance121894;chromium.instance1227394;chromium.instance12989;chromium.instance1318456;chromium.instance1320;chromium.instance1465;chromium.instance1606269;chromium.instance1727770;chromium.instance1776;chromium.instance1786625;chromium.instance1807330;chromium.instance1945992;chromium.instance1948532;chromium.instance1994654;chromium.instance2015957;chromium.instance216927;chromium.instance2195164;chromium.instance2230;chromium.instance2243291;chromium.instance23611;chromium.instance2439317;chromium.instance277846;chromium.instance280986;chromium.instance2830640;chromium.instance2834002;chromium.instance2875;chromium.instance2882;chromium.instance418011;chromium.instance562287;chromium.instance599259;chromium.instance681869;chromium.instance826492;chromium.instance866643;chromium.instance871651;chromium.instance951963;firefox.instance2587322;firefox.instance2838196;firefox.instance423641;vlc"/>
+      <property name="mpris-players" type="string" value="chromium.instance1079;chromium.instance1212598;chromium.instance121894;chromium.instance1227394;chromium.instance12989;chromium.instance1318456;chromium.instance1320;chromium.instance1465;chromium.instance1606269;chromium.instance1727770;chromium.instance1776;chromium.instance1786625;chromium.instance1807330;chromium.instance1945992;chromium.instance1948532;chromium.instance1994654;chromium.instance2015957;chromium.instance216927;chromium.instance2195164;chromium.instance2230;chromium.instance2243291;chromium.instance23611;chromium.instance2439317;chromium.instance277846;chromium.instance280986;chromium.instance2830640;chromium.instance2834002;chromium.instance2875;chromium.instance2882;chromium.instance4076450;chromium.instance418011;chromium.instance562287;chromium.instance599259;chromium.instance681869;chromium.instance826492;chromium.instance866643;chromium.instance871651;chromium.instance951963;firefox.instance2587322;firefox.instance2838196;firefox.instance34028;firefox.instance423641;vlc"/>
     </property>
     <property name="plugin-53" type="string" value="xkb">
       <property name="display-name" type="uint" value="1"/>

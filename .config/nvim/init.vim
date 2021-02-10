@@ -21,6 +21,7 @@ set relativenumber
 set cmdheight=2
 set guioptions+=d
 
+
 " disable stupid exmode
 :map Q <Nop>
 
@@ -49,8 +50,9 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+
+Plug 'itchyny/lightline.vim'
 
 ""Vim Better Whitespace Plug
 ":ToggleWhitespace
@@ -130,7 +132,8 @@ set showmatch
 "enable cursor line
 "set cursorline
 
-"set background=dark set background=light 
+set background=dark
+"set background=light
 "Sometimes it is helpful if your working directory
 "is always the same as the file you are editing.
 "To achieve this, put the following in your vimrc:
@@ -170,6 +173,11 @@ autocmd filetype cpp nnoremap <leader><leader>00 :w <bar> !clear && g++ -Wall -W
 " CTRL-C and CTRL-Insert are Copy
 vnoremap <C-C> "+y
 
+let g:lightline = { 'colorscheme': 'challenger_deep'}
 colorscheme Drakos
 " Display all matching files when we tab complete
 set wildmenu
+
+if has('nvim') || has('termguicolors')
+  set termguicolors
+endif

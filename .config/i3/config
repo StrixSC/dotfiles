@@ -276,9 +276,8 @@ bar {
    # show the binding mode indicator
    binding_mode_indicator yes
 
-    # Tray output
-    tray_output no
-
+   # Tray output
+   tray_output no
 }
 
 
@@ -322,13 +321,9 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 # Starting apps
 #############################
 
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet --sm-disable
 
 # XFCE4 Panel
 exec_always --no-startup-id xfce4-panel --disable-wm-check
@@ -370,8 +365,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # This is to fix the random pulseaudio stop working thing
 bindsym $mod+p exec --no-startup-id pulseaudio -k
 
-bindsym $mod+i exec --no-startup-id picom-trans -c -- -10
-bindsym $mod+o exec --no-startup-id picom-trans -c +10
+bindsym $mod+i exec --no-startup-id picom-trans -c -- -5
+bindsym $mod+o exec --no-startup-id picom-trans -c +5
 
 # start a terminal
 bindsym $mod+Return exec kitty -e fish
@@ -381,6 +376,9 @@ bindsym $mod+Shift+q kill
 
 # switch to next wallpaper
 bindsym $mod+Shift+n exec /home/strix/Scripts/pyautobg --directory /home/strix/Images/Wallpapers/
+
+# switch to logo wallpaper
+bindsym $mod+Shift+m exec /home/strix/Scripts/safe-mode
 
 # Assigning workspaces to monitors
 workspace 1 output DP-0

@@ -6,14 +6,6 @@
 !.bash_profile
 !.bashrc
 !.config/
-!.config/xfce4/
-!.config/xfce4/**
-!.config/xfce4/panel/
-!.config/xfce4/panel/**
-!.config/xfce4/xfconf/
-!.config/xfce4/xfconf/**
-!.config/xfce4/xfconf/xfce-perchannel-xml/
-!.config/xfce4/xfconf/xfce-perchannel-xml/**
 !.config/rofi/
 !.config/rofi/config.rasi
 !.config/i3/
@@ -38,6 +30,8 @@
 !.config/picom/picom.conf
 !.config/fish
 !.config/fish/config.fish
+!.config/cows/
+!.config/cows/**
 !.config/neofetch/config.conf
 !.config/starship.toml
 !.gitconfig
