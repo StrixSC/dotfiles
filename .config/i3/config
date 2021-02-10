@@ -365,8 +365,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # This is to fix the random pulseaudio stop working thing
 bindsym $mod+p exec --no-startup-id pulseaudio -k
 
+# Picom change opacity
 bindsym $mod+i exec --no-startup-id picom-trans -c -- -5
 bindsym $mod+o exec --no-startup-id picom-trans -c +5
+
+# Redshift activate deactivate
+bindsym $ms+R exec redshift -l 45.5:73.6
+bindsym $ms+X exec killall -q redshift
 
 # start a terminal
 bindsym $mod+Return exec kitty -e fish

@@ -38,7 +38,7 @@ Plug 'dikiaap/minimalist'
 Plug 'leafgarland/typescript-vim'
 Plug 'dylnmc/novum.vim'
 Plug 'dracula/vim'
-
+Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
