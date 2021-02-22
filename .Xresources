@@ -1,8 +1,6 @@
-xterm*background: black
-xterm*foreground: white
-xterm*faceName: Monospace
+xterm*faceName: UbuntuMono Nerd Font
 xterm*faceSize: 18
-Xcursor.size: 1 
+Xcursor.size: 1
 Xft.antialias: 0
 
 

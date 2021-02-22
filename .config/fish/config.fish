@@ -8,6 +8,7 @@ end
 ### EXPORT ###
 set -U fish_user_paths $HOME/.local/bin $HOME/Scripts $fish_user_paths
 set fish_greeting                      # Supresses fish's intro message
+set QT_AUTO_SCREEN_SCALE_FACTOR=1
 set TERM "xterm-kitty"              # Sets the terminal type
 set EDITOR "nvim"
 set VISUAL "nvim"

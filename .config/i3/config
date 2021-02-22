@@ -3,8 +3,7 @@
 #
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
-#
-
+# 
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -235,26 +234,10 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-#bar {
-
-    #font pango:DejaVu Sans Mono, FontAwesome 12
-    #position top
-    #output DP-0
-    #status_command i3status-rs ~/.config/i3status-rust/config.toml
-    #colors {
-            #separator #666666
-            #background #222222
-            #statusline #dddddd
-            #focused_workspace #0088CC #0088CC #ffffff
-            #active_workspace #333333 #333333 #ffffff
-            #inactive_workspace #333333 #333333 #888888
-            #urgent_workspace #2f343a #900000 #ffffff
-        #}
-#}
-
 bar {
    # load the status bar config
-   status_command i3blocks
+   status_command i3blocks -c /home/strix/.config/i3blocks/config_vers
+
    output DP-0
 
    # make the status bar support transparency (only in i3-gaps)
@@ -264,7 +247,25 @@ bar {
    position bottom
 
    # use a different font for the bar
-   font pango: FuraMono Nerd Font 10
+   font pango:FuraMono Nerd Font 11
+   # font pango: Source Code Pro for Powerline 12
+   workspace_buttons no
+   tray_output no 
+}
+
+bar {
+   # load the status bar config
+   status_command i3blocks 
+   output DP-0
+
+   # make the status bar support transparency (only in i3-gaps)
+   # i3bar_command i3bar --transparency
+
+   # place the bar on the top
+   position bottom
+
+   # use a different font for the bar
+   font pango:FuraMono Nerd Font 11
    # font pango: Source Code Pro for Powerline 12
 
    # choose if you want workspace buttons
@@ -277,7 +278,7 @@ bar {
    binding_mode_indicator yes
 
    # Tray output
-   tray_output no
+   tray_output primary
 }
 
 
@@ -323,10 +324,10 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet --sm-disable
+exec --no-startup-id nm-applet
 
-# XFCE4 Panel
-exec_always --no-startup-id xfce4-panel --disable-wm-check
+# pasystray (Volume system tray)
+exec pasystray
 
 # Compton
 exec --no-startup-id compton -b -f
@@ -369,21 +370,24 @@ bindsym $mod+p exec --no-startup-id pulseaudio -k
 bindsym $mod+i exec --no-startup-id picom-trans -c -- -5
 bindsym $mod+o exec --no-startup-id picom-trans -c +5
 
-# Redshift activate deactivate
-bindsym $ms+R exec redshift -l 45.5:73.6
-bindsym $ms+X exec killall -q redshift
-
 # start a terminal
 bindsym $mod+Return exec kitty -e fish
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# switch to next wallpaper
-bindsym $mod+Shift+n exec /home/strix/Scripts/pyautobg --directory /home/strix/Images/Wallpapers/
-
 # switch to logo wallpaper
 bindsym $mod+Shift+m exec /home/strix/Scripts/safe-mode
+
+# Toggle Gaps
+set $mode_gaps Toggle gaps: (1) on (2) off
+bindsym $ms+G mode "$mode_gaps"
+mode "$mode_gaps" {
+    bindsym 1 mode "default", gaps inner all set 10, gaps outer all set 15
+    bindsym 2 mode "default", gaps inner all set 0, gaps outer all set 0
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # Assigning workspaces to monitors
 workspace 1 output DP-0

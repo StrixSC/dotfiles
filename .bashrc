@@ -29,4 +29,5 @@ bind '"\e[B": history-search-forward'
 PATH=${PATH}:${HOME}/Scripts
 export PATH
 export GOOGLE_APPLICATION_CREDENTIALS=/run/media/strix/ATLANTIC/important-documents/sparta-7350d.json
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
 source /home/strix/.config/broot/launcher/bash/br

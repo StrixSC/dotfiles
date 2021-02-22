@@ -1,1 +1,1 @@
-echo "<span color='#aaa'> <b>·</b> </span>"
+echo "<span color='#aaa'> <b>"   "</b> </span>"

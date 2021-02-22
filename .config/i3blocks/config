@@ -1,8 +1,7 @@
 # i3blocks config file
 #
 # Please see man i3blocks for a complete reference!
-# The man page is also hosted at http://vivien.github.io/i3blocks
-#
+# The man page is also hosted at http://vivien.github.io/i3blocks 
 # List of valid properties:
 #
 # align
@@ -24,6 +23,7 @@
 #
 # The top properties below are applied to every block, but can be overridden.
 command=~/.config/i3blocks/blocks/$BLOCK_NAME
+version_blocks=~/.config/i3blocks/version_blocks/
 separator_block_width=15
 markup=none
 
@@ -34,6 +34,7 @@ markup=none
 #interval=repeat
 #min_width=100
 #align=center
+#
 
 [keyindicator]
 command=./blocks/keyindicator/keyindicator
@@ -49,55 +50,51 @@ signal=11
 #BG_COLOR_ON=
 #BG_COLOR_OFF=
 
-#[keyindicator-num]
-#command=./blocks/keyindicator/keyindicator
-#KEY=NUM
-#markup=pango
-#interval=once
-#signal=11
-##TEXT_ON=NumLockOn
-##TEXT_OFF=NumLockOff
-##COLOR_ON=#00FF00
-#HIDE_WHEN_OFF=1
+[keyindicator-num]
+command=./blocks/keyindicator/keyindicator
+KEY=NUM
+markup=pango
+interval=once
+signal=11
+#TEXT_ON=NumLockOn
+#TEXT_OFF=NumLockOff
+#COLOR_ON=#00FF00
+HIDE_WHEN_OFF=1
 
-#[wifi]
-#command=./blocks/wifi/wifi
-#label=
-#INTERFACE=wlan0
-#interval=5
-#COLOR_GE80=#00FF00
-#COLOR_GE60=#FFF600
-#COLOR_GE40=#FFAE00
-#COLOR_LOWR=#FF0000
-#COLOR_DOWN=#FF0000
+[wifi]
+command=./blocks/wifi/wifi
+label=
+INTERFACE=wlan0
+interval=5
+COLOR_GE80=#00FF00
+COLOR_GE60=#FFF600
+COLOR_GE40=#FFAE00
+COLOR_LOWR=#FF0000
+COLOR_DOWN=#FF0000
 
-#[bandwidth]
-#command=./blocks/bandwidth2/bandwidth2
-#interval=persist
-#markup=pango
-#LABEL=
-#WARN_RX=307200
-#WARN_TX=30720
-#CRIT_RX=512000
-#CRIT_TX=51200
-#min_width=200
+[bandwidth]
+command=./blocks/bandwidth2/bandwidth2
+interval=persist
+markup=pango
+LABEL=
+WARN_RX=307200
+WARN_TX=30720
+CRIT_RX=512000
+CRIT_TX=51200
+min_width=200
 
-#[key_layout]
-## Requires setxkbmap
-#command=./blocks/key_layout/key_layout
-#label= 
-#interval=30
+[key_layout]
+# Requires setxkbmap
+command=./blocks/key_layout/key_layout
+label= 
+interval=-2
 
-#[xkbmon]
-#command=./blocks/xkbmon/xkbmon
-#interval=persist
-
-#[volume]
-## Requires pulseaudio
-#command=./blocks/volume-pulseaudio/volume-pulseaudio
-#interval=persist
-#SUBSCRIBE=1
-#USE_ALSA_NAME=1
+[volume]
+# Requires pulseaudio
+command=./blocks/volume-pulseaudio/volume-pulseaudio
+interval=persist
+SUBSCRIBE=1
+USE_ALSA_NAME=1
 
 [arch-update]
 # Requires pacman-contrib and checkupdates
@@ -185,20 +182,20 @@ command=./blocks/weather
 interval=3600
 label= 
 
-#[date]
-#command=./blocks/date
-#instance=local
-#interval=3600
-#label= 
+[date]
+command=./blocks/date
+instance=local
+interval=3600
+label= 
 
 #[separator]
 #command=./blocks/separator
 #interval=once
 #markup=pango
 
-#[time]
-#command=./blocks/time
-#instance=local
-#format=%H:%M:%S
-#interval=1
-#label= 
+[time]
+command=./blocks/time
+instance=local
+format=%H:%M:%S
+interval=1
+label= 
