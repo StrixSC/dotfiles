@@ -3,7 +3,7 @@
 #
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
-# 
+#
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -247,8 +247,8 @@ bar {
    position bottom
 
    # use a different font for the bar
-   font pango:FuraMono Nerd Font 11
-   # font pango: Source Code Pro for Powerline 12
+   #font pango:FuraMono Nerd Font 18
+   font pango:ProFontIIx Nerd Font 14
    workspace_buttons no
    tray_output no 
 }
@@ -267,6 +267,7 @@ bar {
    # use a different font for the bar
    font pango:FuraMono Nerd Font 11
    # font pango: Source Code Pro for Powerline 12
+   font pango:ProFontIIx Nerd Font 12
 
    # choose if you want workspace buttons
    workspace_buttons true
@@ -285,8 +286,9 @@ bar {
 bar  {
     position bottom
     output HDMI-0
-    font pango: FuraMono Nerd Font 10
+    #font pango: FuraMono Nerd Font 10
     strip_workspace_numbers yes
+    font pango:ProFontIIx Nerd Font 12
     binding_mode_indicator yes
     tray_output no
 }
@@ -294,7 +296,8 @@ bar  {
 bar  {
     position bottom
     output DVI-D-0
-    font pango: FuraMono Nerd Font 10
+    #font pango: FuraMono Nerd Font 10
+    font pango:ProFontIIx Nerd Font 12
     strip_workspace_numbers yes
     binding_mode_indicator yes
     tray_output no
