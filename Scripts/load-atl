@@ -1,7 +1,0 @@
-#!/bin/bash
-sudo fdisk -l
-
-echo "Mounting Atlantic"
-sudo mount /dev/sde1 /mnt/atlantic
-
-echo "Atlantic Mounted"
