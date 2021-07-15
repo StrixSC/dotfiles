@@ -1,21 +1,8 @@
-# Start X at login
-if status is-login
-    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-        exec startx -- -keeptty
-    end
-end
-
 ### EXPORT ###
-set -U fish_user_paths $HOME/.local/bin $HOME/Scripts $fish_user_paths
+set -U HOSTNAME chronos
 set fish_greeting                      # Supresses fish's intro message
-set QT_AUTO_SCREEN_SCALE_FACTOR=1
-set TERM "xterm-kitty"              # Sets the terminal type
 set EDITOR "nvim"
 set VISUAL "nvim"
-set -gx XDG_CURRENT_DESKTOP "i3-gaps"
-function fish_user_key_bindings
-  fish_vi_key_bindings
-end
 
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
 set fish_color_normal brcyan
