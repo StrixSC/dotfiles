@@ -1,7 +1,6 @@
 *
 !Scripts/
 !Scripts/**
-!.arch-install
 !README.md
 !.bash_profile
 !.bashrc

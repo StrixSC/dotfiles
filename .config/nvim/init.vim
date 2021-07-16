@@ -148,6 +148,12 @@ set mouse=a
 "" toggle line numbers
 noremap <leader><leader>ln :set rnu!<CR>
 
+"" new tab
+noremap <leader>t :tabnew tmp<CR><CR>
+
+"" next tag
+noremap <leader><tab> :tabnext<CR>
+
 "Encoding must be set to UTF-8 for the glyphs to show
 set encoding=utf8
 set fileencoding=utf8
@@ -155,9 +161,9 @@ set fileencoding=utf8
 set incsearch
 
 "space space y will copy all the text
-map <Leader><Leader>y :%y+<CR>
+map <leader><leader>y :%y+<CR>
 "pick random color scheme
-map <Leader>rc :RandomColorScheme<CR>
+map <leader>rc :RandomColorScheme<CR>
 nmap <C-P> :FZF<CR>
 "compiling and running c++ files
 "autocmd filetype cpp nnoremap <leader><leader>4 :w <bar> !clear && g++ -Wall -Wno-unused-result -std=c++11 -O2 % -o %:r && ./%:r <CR>
@@ -174,10 +180,12 @@ autocmd filetype cpp nnoremap <leader><leader>00 :w <bar> !clear && g++ -Wall -W
 vnoremap <C-C> "+y
 
 let g:lightline = { 'colorscheme': 'challenger_deep'}
-colorscheme Drakos
+
 " Display all matching files when we tab complete
 set wildmenu
 
 if has('nvim') || has('termguicolors')
   set termguicolors
 endif
+
+colorscheme challenger_deep
