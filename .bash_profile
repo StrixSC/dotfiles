@@ -4,4 +4,5 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 
-source /home/strix/.config/broot/launcher/bash/br
+source $HOME/.config/broot/launcher/bash/br
+
