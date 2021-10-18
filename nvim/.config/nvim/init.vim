@@ -223,7 +223,6 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-json',
   \ 'coc-python',
-  \ 'coc-cpp',
   \ 'coc-sql',
   \ 'coc-prisma'
   \ ]
