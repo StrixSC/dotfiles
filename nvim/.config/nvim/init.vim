@@ -43,6 +43,7 @@ Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'lifepillar/pgsql.vim'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -60,6 +61,7 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'itchyny/lightline.vim'
 
 Plug 'sevko/vim-nand2tetris-syntax'
+Plug 'scrooloose/nerdcommenter'
 
 ""Vim Better Whitespace Plug
 ":ToggleWhitespace
@@ -90,8 +92,30 @@ Plug 'preservim/nerdcommenter'
 call plug#end()
 
 map <silent> <C-n> :NERDTreeToggle<CR>
+nmap <C-_>   <Plug>NERDCommenterToggle
+vmap <C-_>   <Plug>NERDCommenterToggle<CR>
+
+"So you dont mess up your pinky pressing the control key 10000 times per file  
+nmap <leader>w :w<CR>
 
 let NERDTreeShowHidden=0
+
+let g:NERDTreeGitStatusWithFlags = 1
+"let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+"let g:NERDTreeGitStatusNodeColorization = 1
+"let g:NERDTreeColorMapCustom = {
+    "\ "Staged"    : "#0ee375",  
+    "\ "Modified"  : "#d9bf91",  
+    "\ "Renamed"   : "#51C9FC",  
+    "\ "Untracked" : "#FCE77C",  
+    "\ "Unmerged"  : "#FC51E6",  
+    "\ "Dirty"     : "#FFBD61",  
+    "\ "Clean"     : "#87939A",   
+    "\ "Ignored"   : "#808080"   
+    "\ }                         
+
+
+let g:NERDTreeIgnore = ['^node_modules$']
 
 filetype plugin on
 
@@ -119,7 +143,7 @@ set expandtab
 set laststatus=2
 
 "tail of the filename
-set statusline=%f
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 "Auto indent
 set autoindent
@@ -140,25 +164,19 @@ set showmatch
 "set cursorline
 
 set background=dark
-"set background=light
-"Sometimes it is helpful if your working directory
-"is always the same as the file you are editing.
-"To achieve this, put the following in your vimrc:
-"set autochdir
-
-" yy will not just use internal vim buffer but will also copy
-" into OS's clipboard
 set clipboard=unnamedplus
-"Allow mouse to scroll the vim windows and resize splits
 set mouse=a
 
-"" toggle line numbers
+" toggle line numbers
 noremap <leader><leader>ln :set rnu!<CR>
 
-"" new tab
+" Tab stuff:
 noremap <leader>t :tabnew tmp<CR><CR>
-
-"" next tag
+noremap <leader>1 1gt <CR><CR>
+noremap <leader>2 2gt <CR><CR>
+noremap <leader>3 3gt <CR><CR>
+noremap <leader>4 4gt <CR><CR>
+noremap <leader>5 5gt <CR><CR>
 noremap <leader><tab> :tabnext<CR>
 
 "Encoding must be set to UTF-8 for the glyphs to show
@@ -187,7 +205,7 @@ autocmd filetype cpp nnoremap <leader><leader>00 :w <bar> !clear && g++ -Wall -W
 vnoremap <C-C> "+y
 
 " Remap keys for applying codeAction to the current line.
-nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>k  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 " GoTo code navigation.
@@ -196,7 +214,36 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" coc config
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-json',
+  \ 'coc-python',
+  \ 'coc-cpp',
+  \ 'coc-sql',
+  \ 'coc-prisma'
+  \ ]
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+
+" Ctrl-. remap 
+nnoremap <silent> <space>k  :<C-u>CocList commands<cr>
+
+" Remap for rename current word
+nmap <F2> <Plug>(coc-rename)
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
 let g:lightline = { 'colorscheme': 'challenger_deep'}
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Display all matching files when we tab complete
 set wildmenu
