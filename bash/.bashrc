@@ -145,3 +145,7 @@ export PATH="/home/sc/.komodoide/12.0/XRE/state:$PATH"
 # -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
 export PATH="/home/sc/.cache/activestate/bin:$PATH"
 # -- STOP ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
