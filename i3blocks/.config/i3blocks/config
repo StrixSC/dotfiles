@@ -1,201 +1,28 @@
-# i3blocks config file
-#
-# Please see man i3blocks for a complete reference!
-# The man page is also hosted at http://vivien.github.io/i3blocks 
-# List of valid properties:
-#
-# align
-# color
-# command
-# full_text
-# instance
-# interval
-# label
-# min_width
-# name
-# separator
-# separator_block_width
-# short_text
-# signal
-# urgent
-
+#i3blocks config file
 # Global properties
-#
 # The top properties below are applied to every block, but can be overridden.
-command=~/.config/i3blocks/blocks/$BLOCK_NAME
-version_blocks=~/.config/i3blocks/version_blocks/
 separator_block_width=15
+separator=false
 markup=none
+command=$HOME/.config/vb/blocklets/$BLOCK_NAME
 
-#[window]
-#command=./blocks/window
-#label= 
-#markup=pango
-#interval=repeat
-#min_width=100
-#align=center
-#
-
-[keyindicator]
-command=./blocks/keyindicator/keyindicator
-#Allowed keys are CAPS and NUM
-KEY=CAPS
-markup=pango
-interval=once
-signal=11
-#TEXT_ON=CapsLockOn
-#TEXT_OFF=CapsLockOff
-#COLOR_ON=#00FF00
-#COLOR_OFF=#222222
-#BG_COLOR_ON=
-#BG_COLOR_OFF=
-
-[keyindicator-num]
-command=./blocks/keyindicator/keyindicator
-KEY=NUM
-markup=pango
-interval=once
-signal=11
-#TEXT_ON=NumLockOn
-#TEXT_OFF=NumLockOff
-#COLOR_ON=#00FF00
-HIDE_WHEN_OFF=1
-
-[wifi]
-command=./blocks/wifi/wifi
-label=
-INTERFACE=wlan0
-interval=5
-COLOR_GE80=#00FF00
-COLOR_GE60=#FFF600
-COLOR_GE40=#FFAE00
-COLOR_LOWR=#FF0000
-COLOR_DOWN=#FF0000
-
-[bandwidth]
-command=./blocks/bandwidth2/bandwidth2
-interval=persist
-markup=pango
-LABEL=
-WARN_RX=307200
-WARN_TX=30720
-CRIT_RX=512000
-CRIT_TX=51200
-min_width=200
-
-[key_layout]
-# Requires setxkbmap
-command=./blocks/key_layout/key_layout
-label= 
-interval=-2
-
-[volume]
-# Requires pulseaudio
-command=./blocks/volume-pulseaudio/volume-pulseaudio
-interval=persist
-SUBSCRIBE=1
-USE_ALSA_NAME=1
-
-[arch-update]
-# Requires pacman-contrib and checkupdates
-command=./blocks/arch-update/arch-update
-markup=pango
-interval=3600
-WATCH=^linux.* ^pacman.*
-BASE_COLOR=#5fff5f
-UPDATE_COLOR=#FFFF85
-AUR=true
-LABEL= 
-
-[cpu_usage]
-# Requires mpstat
-command=./blocks/cpu_usage2/cpu_usage2
-markup=pango
-interval=persist
-min_width=100.00%
-REFRESH_TIME=1
-LABEL= 
-WARN_PERCENT=50
-CRIT_PERCENT=80
-DECIMALS=3
-
-[memory]
-command=./blocks/memory/memory
-label= 
+[kernel/kernel-ver]
 interval=10
 
-[gpu-load]
-command=./blocks/gpu-load/gpu-load
-label= 
-interval=10
-min_width=GPU 100%
-# GPU_BRAND=NVIDIA #// or AMD
-#T_WARN=70
-#T_CRIT=90
-
-[disk]
-command=./blocks/disk/disk
-LABEL= 
-# DIR=$HOME
-# ALERT_LOW=10
-interval=30
-
-[disk-io]
-command=./blocks/disk-io/disk-io
-#command=$SCRIPT_DIR/disk-io -w 3 -M -P 0
-interval=persist
-markup=pango
-LABEL= 
-instance=/^nvme0n1/
-#DT=5
-#MB_ONLY=0 #0 or 1
-#KB_ONLY=0 #0 or 1
-WIDTH=4
-#MB_PRECISION=1
-KB_PRECISION=0
-#REGEX=/^(s|h)d[a-zA-Z]+/
-#THRESHOLD=0
-#WARN_COLOR="#FF0000"
-#SEPARATOR=/
-#PREFIX=
-#SUFFIX="B/s"
-
-[trash]
-command=./blocks/trash
-label= 
+[python/py-ver]
 interval=10
 
-[temperature]
-command=./blocks/temperature/temperature
-label=龍 
+[node/node-ver]
 interval=10
-#T_WARN=70
-#T_CRIT=90
-#SENSOR_CHIP=""
 
-#[dimmer]
-## Global properties
-#command=(/usr/lib/i3blocks/$BLOCK_NAME ; echo) | $./blocks/dimmer/dimmer
+[rust/rust-ver]
+interval=10
 
-[weather]
-command=./blocks/weather
-interval=3600
-label= 
+[c/gcc-ver]
+interval=10
 
-[date]
-command=./blocks/date
-instance=local
-interval=3600
-label= 
+[java/jdk-ver]
+interval=10
 
-#[separator]
-#command=./blocks/separator
-#interval=once
-#markup=pango
-
-[time]
-command=./blocks/time
-instance=local
-format=%H:%M:%S
-interval=1
-label= 
+[go/go-ver]
+interval=10
