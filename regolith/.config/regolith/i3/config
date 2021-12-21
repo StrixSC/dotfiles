@@ -48,27 +48,27 @@ set_from_resource $i3-wm.binding. i3-wm.binding.
 # Workspace Names
 # These are the labels which define each i3 workspace.
 ###############################################################################
-set_from_resource $ws1  i3-wm.workspace.01.name ""
-set_from_resource $ws2  i3-wm.workspace.02.name ""
-set_from_resource $ws3  i3-wm.workspace.03.name ""
-set_from_resource $ws4  i3-wm.workspace.04.name ""
-set_from_resource $ws5  i3-wm.workspace.05.name ""
-set_from_resource $ws6  i3-wm.workspace.06.name "ﴣ"
-set_from_resource $ws7  i3-wm.workspace.07.name ""
-set_from_resource $ws8  i3-wm.workspace.08.name ""
-set_from_resource $ws9  i3-wm.workspace.09.name ""
-set_from_resource $ws10 i3-wm.workspace.10.name "聾"
+set_from_resource $ws1  i3-wm.workspace.01.name "tty"
+set_from_resource $ws2  i3-wm.workspace.02.name "dev"
+set_from_resource $ws3  i3-wm.workspace.03.name "www"
+set_from_resource $ws4  i3-wm.workspace.04.name "git"
+set_from_resource $ws5  i3-wm.workspace.05.name "docs"
+set_from_resource $ws6  i3-wm.workspace.06.name "disc"
+set_from_resource $ws7  i3-wm.workspace.07.name "vbox"
+set_from_resource $ws8  i3-wm.workspace.08.name "etc"
+set_from_resource $ws9  i3-wm.workspace.09.name "mail"
+set_from_resource $ws10 i3-wm.workspace.10.name "keepass"
 
-set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
-set $ws6 "6:ﴣ"
-set $ws7 "7:"
-set $ws8 "8:"
-set $ws9 "9:"
-set $ws10 "10:聾"
+set $ws1 "1:tty"
+set $ws2 "2:dev"
+set $ws3 "3:www"
+set $ws4 "4:git"
+set $ws5 "5:docs"
+set $ws6 "6:disc"
+set $ws7 "7:vbox"
+set $ws8 "8:etc"
+set $ws9 "9:mail"
+set $ws10 "10:keepass"
 
 
 set_from_resource $ws11 i3-wm.workspace.11.name "11"
@@ -111,21 +111,19 @@ bindsym $mod+$i3-wm.binding.terminal exec /usr/bin/x-terminal-emulator
     set_from_resource $i3-wm.binding.browser i3-wm.binding.browser Shift+Return
 bindsym $mod+$i3-wm.binding.browser exec gtk-launch $(xdg-settings get default-web-browser)
 
-    set_from_resource $rofiTheme rofi.theme ~/.config/rasi/style_7.rasi
-
 ## Launch // Application // <> Space ##
-    set_from_resource $i3-wm.binding.launcher.app i3-wm.binding.launcher.app space
-    set_from_resource $i3-wm.program.launcher.app i3-wm.program.launcher.app rofi -show drun -theme $rofiTheme
+    set_from_resource $i3-wm.binding.launcher.app i3-wm.binding.launcher.app d
+    set_from_resource $i3-wm.program.launcher.app i3-wm.program.launcher.app rofi -show drun
     bindsym $mod+$i3-wm.binding.launcher.app exec $i3-wm.program.launcher.app
 
 ## Launch // Command // <><Shift> Space ##
     set_from_resource $i3-wm.binding.launcher.cmd i3-wm.binding.launcher.cmd Shift+space
-    set_from_resource $i3-wm.program.launcher.cmd i3-wm.program.launcher.cmd rofi -show run -theme $rofiTheme
+    set_from_resource $i3-wm.program.launcher.cmd i3-wm.program.launcher.cmd rofi -show drun
     bindsym $mod+$i3-wm.binding.launcher.cmd exec $i3-wm.program.launcher.cmd
 
 ## Navigate // Window by Name // <><Ctrl> Space ##
-    set_from_resource $i3-wm.binding.launcher.window i3-wm.binding.launcher.window Ctrl+space
-    set_from_resource $i3-wm.program.launcher.window i3-wm.program.launcher.window rofi -show window -theme $rofiTheme
+    set_from_resource $i3-wm.binding.launcher.window i3-wm.binding.launcher.window p 
+    set_from_resource $i3-wm.program.launcher.window i3-wm.program.launcher.window rofi -show window
     bindsym $mod+$i3-wm.binding.launcher.window exec $i3-wm.program.launcher.window
 
 ## Launch // This Dialog // <><Shift> ? ##
@@ -426,7 +424,7 @@ bindsym $mod+$i3-wm.binding.browser exec gtk-launch $(xdg-settings get default-w
     bindsym $mod+$i3-wm.binding.settings exec $i3-wm.program.settings
 
 ## Modify // Display Settings // <><Shift> d ##
-    set_from_resource $i3-wm.binding.display i3-wm.binding.display d
+    set_from_resource $i3-wm.binding.display i3-wm.binding.display Shift+d
     set_from_resource $i3-wm.program.display i3-wm.program.display gnome-control-center --class=floating_window display
     bindsym $mod+$i3-wm.binding.display exec $i3-wm.program.display
 
@@ -615,15 +613,15 @@ set_from_resource $i3-wm.bar.workspace.urgent.background.color i3-wm.bar.workspa
 set_from_resource $i3-wm.bar.workspace.urgent.text.color i3-wm.bar.workspace.urgent.text.color "#fdf6e3"
 
 # Sets i3 font for dialogs
-set_from_resource $i3-wm.font i3-wm.font pango:Source Code Pro Medium 13
+set_from_resource $i3-wm.font i3-wm.font pango:SauceCodePro Nerd Font 7
 font $i3-wm.font
 
 ###############################################################################
 # i3 Bar
 ###############################################################################
 
-set_from_resource $i3-wm.bar.position i3-wm.bar.position bottom
-set_from_resource $i3-wm.bar.font i3-wm.bar.font pango:Source Code Pro Medium 13, Material Design Icons 13
+set_from_resource $i3-wm.bar.position i3-wm.bar.position top
+set_from_resource $i3-wm.bar.font i3-wm.bar.font $i3-wm.font
 set_from_resource $i3-wm.bar.separator i3-wm.bar.separator " "
 set_from_resource $i3-wm.bar.trayoutput i3-wm.bar.trayoutput primary
 set_from_resource $i3-wm.bar.stripworkspacenumbers i3-wm.bar.stripworkspacenumbers yes
@@ -641,17 +639,19 @@ bar {
         font pango:ProFontIIx Nerd Font 14
         workspace_buttons no
         tray_output no
+        output eDP-1
 }
 
 # The bar configuration
 bar {
-    position $i3-wm.bar.position
+        position top 
         mode $i3-wm.bar.mode
         font $i3-wm.bar.font
         separator_symbol $i3-wm.bar.separator
         status_command $i3-wm.bar.status_command
         tray_output $i3-wm.bar.trayoutput
         strip_workspace_numbers $i3-wm.bar.stripworkspacenumbers
+        output eDP-1
 
         colors {
             background $i3-wm.bar.background.color
@@ -664,6 +664,54 @@ bar {
                 inactive_workspace $i3-wm.bar.workspace.inactive.border.color     $i3-wm.bar.workspace.inactive.background.color  $i3-wm.bar.workspace.inactive.text.color
                 urgent_workspace   $i3-wm.bar.workspace.urgent.border.color       $i3-wm.bar.workspace.urgent.background.color    $i3-wm.bar.workspace.urgent.text.color
         }
+}
+
+bar {
+        # load the status bar config
+        position top
+        workspace_buttons yes
+        tray_output no
+        output DP-1-1
+                colors {
+            background $i3-wm.bar.background.color
+                statusline $i3-wm.bar.statusline.color
+                separator  $i3-wm.bar.separator.color
+
+#                        BORDER  BACKGROUND TEXT
+                focused_workspace  $i3-wm.bar.workspace.focused.border.color      $i3-wm.bar.workspace.focused.background.color   $i3-wm.bar.workspace.focused.text.color
+                active_workspace   $i3-wm.bar.workspace.active.border.color       $i3-wm.bar.workspace.active.background.color    $i3-wm.bar.workspace.active.text.color
+                inactive_workspace $i3-wm.bar.workspace.inactive.border.color     $i3-wm.bar.workspace.inactive.background.color  $i3-wm.bar.workspace.inactive.text.color
+                urgent_workspace   $i3-wm.bar.workspace.urgent.border.color       $i3-wm.bar.workspace.urgent.background.color    $i3-wm.bar.workspace.urgent.text.color
+        }
+
+        mode $i3-wm.bar.mode
+        font $i3-wm.bar.font
+        tray_output $i3-wm.bar.trayoutput
+        strip_workspace_numbers $i3-wm.bar.stripworkspacenumbers
+
+}
+
+bar {
+        mode $i3-wm.bar.mode
+        font $i3-wm.bar.font
+        separator_symbol $i3-wm.bar.separator
+        strip_workspace_numbers $i3-wm.bar.stripworkspacenumbers
+        position top
+        workspace_buttons yes
+        tray_output no
+        output DP-1-2
+                colors {
+            background $i3-wm.bar.background.color
+                statusline $i3-wm.bar.statusline.color
+                separator  $i3-wm.bar.separator.color
+
+#                        BORDER  BACKGROUND TEXT
+                focused_workspace  $i3-wm.bar.workspace.focused.border.color      $i3-wm.bar.workspace.focused.background.color   $i3-wm.bar.workspace.focused.text.color
+                active_workspace   $i3-wm.bar.workspace.active.border.color       $i3-wm.bar.workspace.active.background.color    $i3-wm.bar.workspace.active.text.color
+                inactive_workspace $i3-wm.bar.workspace.inactive.border.color     $i3-wm.bar.workspace.inactive.background.color  $i3-wm.bar.workspace.inactive.text.color
+                urgent_workspace   $i3-wm.bar.workspace.urgent.border.color       $i3-wm.bar.workspace.urgent.background.color    $i3-wm.bar.workspace.urgent.text.color
+        }
+
 }
 
 ###############################################################################

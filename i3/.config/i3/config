@@ -109,16 +109,16 @@ bindsym $mod+c focus child
 # set $ws9 "9:"
 # set $ws10 "10:聾"
 
-set $ws1 "1:tty"
-set $ws2 "2:dev"
-set $ws3 "3:www"
-set $ws4 "4:git"
-set $ws5 "5:docs"
-set $ws6 "6:disc"
-set $ws7 "7:vbox"
-set $ws8 "8:etc"
-set $ws9 "9:mail"
-set $ws10 "10:keepass"
+set $ws1 "tty"
+set $ws2 "dev"
+set $ws3 "www"
+set $ws4 "git"
+set $ws5 "docs"
+set $ws6 "disc"
+set $ws7 "vbox"
+set $ws8 "etc"
+set $ws9 "mail"
+set $ws10 "keepass"
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
