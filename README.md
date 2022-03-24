@@ -23,8 +23,3 @@ stow <DIRECTORY_OF_CONFIG>
  ```
 
  This, of course, is taking into consideration that your `$XDG_HOME_CONFIG` points to `$HOME/.config`.
-
-
-TODO: 
-
-- Document arch install file in ORG mode
