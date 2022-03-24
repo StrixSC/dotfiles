@@ -22,4 +22,4 @@ stow <DIRECTORY_OF_CONFIG>
  stow nvim
  ```
 
- This, of course, is taking into consideration that your `$XDG_HOME_CONFIG` points to `$HOME/.config`.
+Make sure that your `$XDG_HOME_CONFIG` points to `$HOME/.config`.
