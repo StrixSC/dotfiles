@@ -1,5 +1,4 @@
 # Don't print a new line at the start of the prompt
-
 add_newline = false
 format="""
 $username[@](bold bright-white)\
@@ -35,8 +34,7 @@ $cmd_duration\
 ${custom.separator}\
 ${custom.giturl}\
 $line_break\
-$time $character
-"""
+$time $character"""
 
 [character]                            # The name of the module we are configuring is "character"
 error_symbol = "[∗](bold red) "
